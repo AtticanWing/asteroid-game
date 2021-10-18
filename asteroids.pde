@@ -58,6 +58,8 @@ void setup() {
   //imageMode(CENTER);
   size(800, 800);
   rectMode(CENTER);
+  
+  //summoning ship and asteroids
   myShip = new Ship();
   myObjects = new ArrayList<GameObject>();
   myObjects.add(myShip);
@@ -68,6 +70,7 @@ void setup() {
   myObjects.add(new Asteroid());
   myObjects.add(new Asteroid());
   
+  //setting up various variables
   UFOtimer = 0;
   ufo = false;
   score = 0;
@@ -86,7 +89,8 @@ void setup() {
   stamp = createFont("stamp.TTF", 200);
   neon = createFont("NeonSans.ttf", 200);
   textAlign(CENTER, CENTER);
-
+  
+  //more gif setup
   int i = 0;
   int i1 = 0;
   int i2 = 0;
