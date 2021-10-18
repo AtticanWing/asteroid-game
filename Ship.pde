@@ -14,7 +14,7 @@ class Ship extends GameObject {
     tpTimer = 0;
     immune = 0;
     t = 0;
-    threshold = 60; //power up can dec threshold to get rapid fire effect
+    threshold = 60;
   }
 
   //3. Behaviour Functions
