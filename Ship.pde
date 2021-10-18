@@ -27,7 +27,7 @@ class Ship extends GameObject {
     stroke(green, t);
     ellipse(0, 0, 50, 50);
 
-    if (immune > threshold*3) {
+    if (immune >= threshold*3) {
       stroke(lightblue);
     } else {
       stroke(paleblue);
@@ -47,7 +47,7 @@ class Ship extends GameObject {
     immune++; //immune timer
 
     //immune display
-    if (immune > threshold*3) { 
+    if (immune >= threshold*3) { 
       c = 0;
       t = 0;
     } else {
@@ -89,12 +89,12 @@ class Ship extends GameObject {
 
       if (obj instanceof Asteroid || obj instanceof UFO || obj instanceof UFOBullets) {
 
-        if (immune > threshold*3 && dist(location.x, location.y, obj.location.x, obj.location.y) <= 15 + obj.size/2) { //need to make size fix
+        if (immune >= threshold*3 && dist(location.x, location.y, obj.location.x, obj.location.y) <= 15 + obj.size/2) { //need to make size fix
           lives--;
           immune = 0;
         }
 
-        if (ekey && tpTimer > threshold*3) {
+        if (ekey && tpTimer >= threshold*3) {
           location.x = int(random(0, width));
           location.y = int(random(0, height));
           tpTimer = 0;
