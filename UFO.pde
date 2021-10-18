@@ -8,7 +8,7 @@ class UFO extends GameObject {
     lives = 1;
     velocity = new PVector (0, 1);
     uBullet = 90;
-    threshold = 60;
+    threshold = 90;
     size = 50;
 
     //random spawning on 4 sides of screen
@@ -50,7 +50,7 @@ class UFO extends GameObject {
     uBullet++; //timer
 
     //add new UFOBullet after certain amt of frames
-    if (uBullet >= threshold*1.5) {
+    if (uBullet >= threshold) {
       myObjects.add(new UFOBullets(location.x, location.y));
       uBullet = 0;
     }
