@@ -23,16 +23,17 @@ class Ship extends GameObject {
     translate(location.x, location.y);
     rotate(direction.heading());
     noFill();
-
+    
+    //immune visual
     stroke(green, t);
     ellipse(0, 0, 50, 50);
-
+    
     if (immune >= threshold*3) {
       stroke(lightblue);
     } else {
       stroke(paleblue);
     }
-    triangle(-15, -10, -15, 10, 15, 0);
+    triangle(-15, -10, -15, 10, 15, 0); //ship
     popMatrix();
   }
   
@@ -80,8 +81,9 @@ class Ship extends GameObject {
       myObjects.add(new Bullet());
       shotTimer = 0;
     }
-    if (upkey == false) velocity.setMag(velocity.mag()*0.95);
-
+    if (upkey == false) velocity.setMag(velocity.mag()*0.95); //slowing down
+    
+    //collision w asteroid, ufo, or ufobullet
     int i = 0;
     while (i < myObjects.size()) {
 
@@ -89,11 +91,12 @@ class Ship extends GameObject {
 
       if (obj instanceof Asteroid || obj instanceof UFO || obj instanceof UFOBullets) {
 
-        if (immune >= threshold*3 && dist(location.x, location.y, obj.location.x, obj.location.y) <= 15 + obj.size/2) { //need to make size fix
+        if (immune >= threshold*3 && dist(location.x, location.y, obj.location.x, obj.location.y) <= 15 + obj.size/2) {
           lives--;
           immune = 0;
         }
-
+        
+        //tp code
         if (ekey && tpTimer >= threshold*3) {
           location.x = int(random(0, width));
           location.y = int(random(0, height));
