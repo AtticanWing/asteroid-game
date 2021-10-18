@@ -41,7 +41,7 @@ class Asteroid extends GameObject { //how many asteroids is required?
 
       if (obj instanceof Bullet) {
 
-        if (dist(location.x, location.y, obj.location.x, obj.location.y) <= size/2 + obj.size/2) {
+        if (dist(location.x, location.y, obj.location.x, obj.location.y) <= size/2 + obj.size/2) { //collision w bullet
           obj.lives = 0;
           lives = 0;
           score++;
@@ -50,14 +50,16 @@ class Asteroid extends GameObject { //how many asteroids is required?
           while (n < num) {
             myObjects.add(new Particles(int(random(0, 10)), location.x, location.y, lightblue));
             n++;
-
+          
+          //bouncing code that I didn't manage to figure out
           //if (location.x != Particles[i].x && location.y != Particles[i].y) {   
           //  if (dist(location.x,location.y, obj.location.x, obj.location.y) < (myObjects.size)/2 + size/2) {
           //    velocity = (location.x - bouncers.x)/2;
           //  }
           //}
        }
-
+          
+          //if hasnt been hit more than 2 times, create 2 new asteroids
           if (hits >= 2) {
             myObjects.add(new Asteroid(size/2, location.x, location.y, hits/2));
             myObjects.add(new Asteroid(size/2, location.x, location.y, hits/2));
