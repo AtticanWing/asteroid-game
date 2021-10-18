@@ -50,7 +50,8 @@ void game() {
     GameObject obj = myObjects.get(i);
     obj.show();
     obj.act();
-
+    
+    //adding ufo in after 1000 frames
     if (ufo == false && UFOtimer >= 1000) {
       myObjects.add(new UFO());
       ufo = true;
