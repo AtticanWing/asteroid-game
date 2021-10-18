@@ -1,13 +1,13 @@
 class UFO extends GameObject {
   int spawn, uBullet;
-  float angle1, angle2;
+  float angle1, angle2; //didnt use
 
   //constructor
   UFO() {
     spawn = int(random(0, 4));
     lives = 1;
     velocity = new PVector (0, 1);
-    uBullet = 90;
+    uBullet = 60;
     threshold = 60;
     size = 50;
 
